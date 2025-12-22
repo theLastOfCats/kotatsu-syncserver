@@ -36,7 +36,7 @@ suspend fun syncHistory(
 
 private suspend fun Database.upsertHistory(history: History, userId: Int) {
     val existed = this.history.find { x -> (x.manga eq history.mangaId) and (x.userId eq userId) }?.toHistory()
-    if (existed == history) {
+    if (existed != null && (existed == history || existed.updatedAt > history.updatedAt)) {
         return
     }
     withRetry {
