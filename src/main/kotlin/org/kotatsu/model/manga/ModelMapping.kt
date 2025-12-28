@@ -14,6 +14,7 @@ fun MangaEntity.toManga() = Manga(
     state = state?.name,
     author = author,
     source = source,
+    nsfw = nsfw,
 )
 
-fun TagEntity.toTag() = MangaTag(id, title, key, source)
+fun TagEntity.toTag() = MangaTag(id, title, key, source, pinned)

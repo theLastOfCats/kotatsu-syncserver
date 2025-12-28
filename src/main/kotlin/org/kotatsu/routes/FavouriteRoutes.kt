@@ -1,17 +1,15 @@
 package org.kotatsu.routes
 
-import io.ktor.http.HttpStatusCode
-import io.ktor.server.response.respond
-import io.ktor.server.routing.*
+import io.ktor.http.*
 import io.ktor.server.auth.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import org.kotatsu.database
 import org.kotatsu.model.favourite.FavouritesPackage
 import org.kotatsu.plugins.currentUser
 import org.kotatsu.resources.setFavouritesSynchronized
 import org.kotatsu.resources.syncFavourites
-import org.ktorm.database.TransactionIsolation
 
 fun Route.favouriteRoutes() {
     authenticate("auth-jwt") {
