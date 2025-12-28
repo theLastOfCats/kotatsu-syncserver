@@ -11,5 +11,5 @@ data class MangaTag(
     @SerialName("title") val title: String,
     @SerialName("key") val key: String,
     @SerialName("source") val source: String,
-    @SerialName("pinned") val pinned: Boolean,
+    @SerialName("pinned") val pinned: Boolean = false,
 )
