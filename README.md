@@ -5,8 +5,8 @@
 List of official servers:
 |Domain|Location|Status|
 |---|---|---|
-|sync.kotatsu.app|Germany|
-|moe.shirizu.org|Germany|
+|sync.kotatsu.app|Germany|✅
+|moe.shirizu.org|Germany|✅
 
 ### What is synchronization?
 
