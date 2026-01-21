@@ -53,12 +53,6 @@ jobs:
             type=sha,prefix=sha-
             type=raw,value=latest,enable={{is_default_branch}}
 
-      - name: Set repository name to lowercase
-        id: lower-repo
-        run: |
-          REPO_LOWER=$(echo "${{ env.IMAGE_NAME }}" | tr '[:upper:]' '[:lower:]')
-          echo "repository=$REPO_LOWER" >> $GITHUB_OUTPUT
-
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
